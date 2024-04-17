@@ -2,30 +2,30 @@
 
 use App\Http\Controllers\GoogleAuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use Laravel\Socialite\Facades\Socialite;
 
 
 //main page
-Route::get('/', [UserController::class, 'index']);
+Route::get('/', [AdminController::class, 'index']);
 
 //register page
 //the post method is to be used here
-Route::get('/register',[UserController::class, 'registerForm']);
+Route::get('/register',[AdminController::class, 'registerForm']);
 
-Route::post('/signup',[UserController::class, 'signup'])->name('sign-up');
+Route::post('/signup',[AdminController::class, 'signup'])->name('sign-up');
 
-Route::post('/signin',[UserController::class, 'signin'])->name('sign-in');
+Route::post('/signin',[AdminController::class, 'signin'])->name('sign-in');
 
 //login page
-Route::get('/login',[UserController::class, 'loginForm'])->name('login');
+Route::get('/login',[AdminController::class, 'loginForm'])->name('login');
 
 
 //logout page
-Route::get('/logout',[UserController::class, 'logoutForm']);
+Route::get('/logout',[AdminController::class, 'logoutForm']);
 
 
-Route::get('/dashboard',[UserController::class, 'userDashboard'])->name('user-dashboard');
+Route::get('/dashboard',[AdminController::class, 'adminDashboard'])->name('admin-dashboard');
 
 
 

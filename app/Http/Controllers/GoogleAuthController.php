@@ -44,7 +44,7 @@ class GoogleAuthController extends Controller
             ]);
 
             Auth::login($user);
-            return redirect()->route('user-dashboard');
+            return redirect()->route('admin-dashboard');
         }catch(\Exception $e){
             Log::error('Google authentication error: ' . $e->getMessage());
             return redirect()->route('login')->with('error', 'An error occurred during Google authentication.');

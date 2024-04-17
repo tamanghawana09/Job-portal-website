@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Psr\Http\Message\ResponseInterface;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
     public function index(){
         return view('index');
@@ -24,8 +24,8 @@ class UserController extends Controller
         return redirect()->route('login'); 
     }
 
-    public function userDashboard(){
-        return view('userDashboard');
+    public function adminDashboard(){
+        return view('Admin.adminDashboard');
     }
 
     public function signup(Request $req){
@@ -51,7 +51,7 @@ class UserController extends Controller
         ]);
 
         if(Auth::attempt(['email' =>$req->email, 'password' => $req->password])){
-            return redirect()->route('user-dashboard');
+            return redirect()->route('admin-dashboard');
         }
         return redirect()->back()->with('error','Invalid credentials');
     }
