@@ -1,0 +1,208 @@
+@import 'color.css';
+@import 'font.css';
+@import 'reset.css';
+
+body{
+   background-color: var(--bg-color);
+}
+.nav-container{
+   width: 300px;
+   height: 100%;
+   background-color: var(--primary-color);
+   color: #fff;
+   position: fixed;
+   top: 0;
+   left: -300px;
+   transition: left 0.3s ease;
+   overflow-y: auto;
+}
+.nav-container.active{
+   left:0;
+}
+.nav-container >  .sidebar-header{
+   padding: 10px;
+   text-align: center;
+   background-color: var(--primary-color);
+}
+.nav-container > .sidebar-header > h1{
+   font-family: 'Inter';
+}
+
+.nav-container > .sidebar-menu{
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+.nav-container > .sidebar-menu > .menu{
+   display: flex;
+   justify-content: center;
+   align-items: left;
+   flex-direction: column;
+}
+
+.nav-container > .sidebar-menu > .menu>  li{
+   padding: 10px 10px;
+   font-family: 'Inter';
+}
+
+.nav-container  .sidebar-menu .menu li  a{
+   display:flex;
+   align-items: center;
+   padding: 10px 15px;
+   text-decoration: none;
+   color: white;
+   font-size: 1rem;
+}
+
+.nav-container  .sidebar-menu .menu li  a i{
+   margin-right: 10px;
+   font-size: 20px;
+}
+
+.nav-container  .sidebar-menu .menu li  :hover{
+   background-color: #11bff49c;
+   border: none;
+}
+
+.main-content {
+   transition: padding-left 0.3s ease;
+   overflow: hidden;
+}
+
+.main-content > nav{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
+   background-color: #fff;
+   margin-bottom: 20px;
+   margin-top: 0;
+   padding: 10px;
+}
+
+.main-content > nav >.title > h1{
+   font-size: 1.5rem;
+   font-family: 'Inter';
+}
+
+.nav-container.active + .main-content{
+   padding-left: 300px;
+   
+}
+#togglebutton{
+   padding: 10px;
+   top:20px;
+   left: 20px;
+   z-index: 999;
+   background-color: transparent;
+   border: none;
+   font-size: 20px;
+}
+
+
+.main-content > nav > .search > form > input{
+   padding: 7px;
+   width: 300px;
+   border-radius: 10px;
+   border:none;
+   background-color: #d2d1d1b1;
+}
+
+.main-content > nav > .search > form > button{
+   padding:7px;
+   width: 80px;
+   border-radius:10px;
+   border:none;
+   background-color: var(--primary-color);
+   color: white;
+}
+
+.main-content > .dashboard-content{
+   padding: 20px;
+}
+
+.main-content > .dashboard-content > .grid{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 30px;
+   font-family: 'Inter';
+   font-size: 1.2rem;
+   font-weight: 500;
+   padding: 10px;
+}
+
+.main-contentl > .dashboard-content > .grid > .item{
+   padding: 20px;
+}
+.main-content > .dashboard-content > .grid> .item:first-child{
+   background-color: var(--secondary-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+   height: 100px;
+}
+.main-content > .dashboard-content > .grid > .item:nth-child(2){
+   background-color: var(--dashboard1-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+}
+.main-content > .dashboard-content > .grid > .item:nth-child(3){
+   background-color: var(--dashboard2-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+}
+.main-content > .dashboard-content > .grid > .item:last-child{
+   background-color: var(--dashboard3-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+}
+.main-content > .dashboard-content > .grid > .item > .lang{
+   font-size: 1.5rem;
+}
+.main-content > .dashboard-content > .grid > .item > .total{
+   font-size: 1.1rem;
+   font-weight: 300;
+}
+
+.main-content > .chart-content{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 10px;
+   font-family: 'Inter';
+}
+.main-content > .chart-content > .grid{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+   padding: 10px;
+}
+.main-content > .chart-content > .grid > .bar-chart{
+   width: auto;
+   height: 35vh;
+   background-color: var(--dashboard1-color);
+   padding: 20px;
+   border-radius: 10px;
+}
+.main-content > .chart-content > .grid > .pie-chart{
+   width: auto;
+   height: 35vh;
+   background-color: var(--dashboard2-color);
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.main-content > .chart-content > .grid > .bar-chart> .lang{
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+.main-content > .chart-content > .grid > .pie-chart> .lang{
+   font-size: 1.5rem;
+   font-weight: bold;
+}

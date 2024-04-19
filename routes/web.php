@@ -25,7 +25,11 @@ Route::get('/login',[AdminController::class, 'loginForm'])->name('login');
 Route::get('/logout',[AdminController::class, 'logoutForm']);
 
 
-Route::get('/dashboard',[AdminController::class, 'adminDashboard'])->name('admin-dashboard');
+Route::get('/dashboard',[AdminController::class, 'adminDashboard'])->name('admin-dashboard')->middleware('auth');
+Route::get('/profile',[AdminController::class, 'adminProfile'])->name('admin-profile')->middleware('auth');
+Route::get('/candidate',[AdminController::class, 'adminCandidate'])->name('admin-candidate')->middleware('auth');
+Route::get('/ATS',[AdminController::class, 'adminATS'])->name('admin-ATS')->middleware('auth');
+Route::get('/job-analytics',[AdminController::class, 'adminJobAnalytics'])->name('admin-job-analytics')->middleware('auth');
 
 
 

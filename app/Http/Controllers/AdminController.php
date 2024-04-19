@@ -25,7 +25,19 @@ class AdminController extends Controller
     }
 
     public function adminDashboard(){
-        return view('Admin.adminDashboard');
+        return view('Admin-UI.adminDashboard');
+    }
+    public function adminProfile(){
+        return view('Admin-UI.adminProfile');
+    }
+    public function adminCandidate(){
+        return view('Admin-UI.adminCandidate');
+    }
+    public function adminATS(){
+        return view('Admin-UI.adminATS');
+    }
+    public function adminJobAnalytics(){
+        return view('Admin-UI.adminJobAnalytics');
     }
 
     public function signup(Request $req){
