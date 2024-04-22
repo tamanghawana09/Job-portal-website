@@ -12,7 +12,7 @@
         <input type="text" placeholder="email" id="email" name="email"><br><br>
         <input type="text" placeholder="username" id="username" name="username"><br><br>
         <input type="password" placeholder="password" id="password" name="password"><br><br>
-        <button>cRegister</button>
+        <button>Register</button>
     </form>
 </body>
 </html>

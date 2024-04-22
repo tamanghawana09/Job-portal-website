@@ -101,20 +101,101 @@ body{
    font-size: 20px;
 }
 
-
-.main-content > nav > .search > form > input{
-   padding: 7px;
-   width: 300px;
-   border-radius: 10px;
-   border:none;
-   background-color: #d2d1d1b1;
+.main-content > .dashboard-content{
+   padding: 10px;
 }
 
-.main-content > nav > .search > form > button{
-   padding:7px;
-   width: 80px;
-   border-radius:10px;
-   border:none;
-   background-color: var(--primary-color);
+.main-content > .dashboard-content > .grid{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 30px;
+   font-family: 'Inter';
+   font-size: 1.2rem;
+   font-weight: 500;
+   padding: 10px;
+}
+
+.main-contentl > .dashboard-content > .grid > a >  .item1, .item2, .item3, .item4{
+   padding: 20px;
+}
+.main-content > .dashboard-content > .grid> a > .item1{
+   background-color: var(--secondary-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+   height: 100px;
+}
+.main-content > .dashboard-content > .grid > a > .item2{
+   background-color: var(--dashboard1-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+   height: 100px;
+}
+.main-content > .dashboard-content > .grid > a > .item3{
+   background-color: var(--dashboard2-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+   height: 100px;
+
+}
+.main-content > .dashboard-content > .grid > a > .item4{
+   background-color: var(--dashboard3-color);
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+   height: 100px;
+}
+
+.main-content > .dashboard-content > .grid > a  {
+   color: black;
+   text-decoration: none;
+}
+.main-content > .dashboard-content > .grid > a > .item1, .item2, .item3, .item4 > .lang{
+   font-size: 1.5rem;
+}
+
+.main-content > .post-content{
+   padding: 20px;
+   gap: 10px;
+}
+
+.main-content > .post-content > .post{
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: column;
+   padding: 20px;
+   font-family: 'Inter';
+   background-color: white;
+   border: none;
+   border-radius: 10px;
+   width: auto;
+   margin-bottom: 10px;
+}
+.main-content >.post-content > .post > .button{
+   margin-top: 20px;
+}
+.main-content >.post-content > .post > .button > a{
+   text-decoration: none;
+   border: none;
+   border-radius: 10px;
+}
+.main-content > .post-content > .post > .button > .read-btn{
+   padding: 10px;
+   background-color: var(--green-color);
+   color: white;
+}
+
+.main-content > .post-content > .post > .button > .edit-btn{
+   padding: 10px;
+   background-color: var(--secondary-color);
+   color: white;
+}
+
+.main-content > .post-content > .post > .button > .delete-btn{
+   padding: 10px;
+   background-color: var(--delete-color);
    color: white;
 }

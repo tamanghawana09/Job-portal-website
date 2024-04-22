@@ -101,21 +101,47 @@ body{
    font-size: 20px;
 }
 
-
-.main-content > nav > .search > form > input{
-   padding: 7px;
-   width: 300px;
-   border-radius: 10px;
-   border:none;
-   background-color: #d2d1d1b1;
+.main-content > .profile-content > nav > ul{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+   padding: 10px;
+   gap: 20px;
+   font-family: 'Inter';
+   background-color: white;
 }
 
-.main-content > nav > .search > form > button{
-   padding:7px;
-   width: 80px;
-   border-radius:10px;
-   border:none;
-   background-color: var(--primary-color);
-   color: white;
+.main-content > .profile-content > nav > ul > li{
+   text-decoration:none;
+   list-style: none;
+   gap: 10px;
 }
 
+.main-content > .profile-content > nav > ul > li > button{
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   border: none;
+   font-size: 1rem;
+   background-color: transparent;
+   transition: box-shadow 0.3s ease-in-out;
+}
+
+.main-content > .profile-content > nav > ul > li :hover{
+   box-shadow: 9px 9px 37px -10px rgba(0,0,0,0.81);
+   -webkit-box-shadow: 9px 9px 37px -10px rgba(0,0,0,0.81);
+   -moz-box-shadow: 9px 9px 37px -10px rgba(0,0,0,0.81);
+
+}
+
+.main-content > .profile-content > nav > ul > li > button i{
+  margin-right: 10px;
+}
+
+.main-content > .form-content > .personal-info > form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}

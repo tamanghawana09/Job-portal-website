@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobPost;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -37,9 +38,11 @@ class AdminController extends Controller
         return view('Admin-UI.adminATS');
     }
     public function adminJobAnalytics(){
-        return view('Admin-UI.adminJobAnalytics');
+        $posts =JobPost::all();
+        return view('Admin-UI.adminJobAnalytics' ,['posts' => $posts]);
     }
 
+    
     public function signup(Request $req){
         $req->validate([
             'email' => 'required|email|unique:users',

@@ -1,0 +1,31 @@
+@import 'color.css';
+@import 'reset.css';
+@import 'font.css';
+
+body{
+    background-color: var(--bg-color);
+}
+
+.read-post > .post{
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Inter';
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.read-post > .post > .button > a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 10px;
+    font-family: 'Inter';
+    border: none;
+}

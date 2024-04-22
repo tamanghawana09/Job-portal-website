@@ -32,15 +32,53 @@
                     <button id="togglebutton"><i class="fa-solid fa-bars"></i></button>
                 </div>
                 <div class="title"><h1>Job-Analytics</h1></div>
-                <div class="search">
-                    <form action="">
-                        <input type="text" placeholder="Search">
-                        <button>Search</button>
-                    </form>
-                </div>
-                <div class="admin"><i class="fa-solid fa-user"></i></div>
+                <div class="admin"><i class="fa-solid fa-user">user</i></div>
             </nav>
-
+            <div class="dashboard-content">
+                <div class="grid">
+                    <a href="{{route('create-job')}}">
+                        <div class="item1">
+                            <div class="lang">Create Job Post</div>
+                        </div>
+                    </a>
+                    
+                    <a href="{{route('view-application')}}">
+                        <div class="item2">
+                            <div class="lang">View Applications</div>
+                        </div>
+                    </a>
+                    <a href="{{route('rejected-application')}}">
+                        <div class="item3">
+                            <div class="lang">Rejected Applications</div>
+                        </div>
+                    </a>
+                <a href="{{route('pending-application')}}">
+                        <div class="item4">
+                            <div class="lang">Pending Applications</div>   
+                        </div>
+                </a>
+                </div>
+            </div>
+            <div class="post-content">
+                @foreach ($posts as $value )
+                <div class="post">
+                    <h1>{{$value['title']}}</h1>
+                    <div class="company-desc">
+                        <h3>Company Description:</h3>
+                        <p>{{$value['company_description']}}</p>
+                    </div>
+                    <div class="role-desc">
+                        <h3>Role:</h3>
+                        <p>{{$value['role']}}</p>
+                    </div>
+                    <div class="button">
+                        <a href="/job-analytics/read/{{$value['id']}}" class="read-btn">Read</a></button>
+                        <a href="/job-analytics/edit/{{$value['id']}}" class="edit-btn">Edit</a></button>
+                        <a href="/job-analytics/delete/{{$value['id']}}" class="delete-btn">Delete</a></button>
+                    </div>
+                </div>
+                @endforeach
+            </div>
    </section>
    <script src="js/script.js"></script>
 </body>
