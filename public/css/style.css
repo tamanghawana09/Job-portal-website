@@ -1,0 +1,154 @@
+@import 'reset.css';
+@import 'font.css';
+@import 'color.css';
+
+body {
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+.nav-container {
+    background-image: url(https://img.freepik.com/premium-photo/top-view-office-desk-with-office-tools-computer-laptop-wood-table-background-with-copy-space-generative-ai_3535-3556.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 85vh;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.box .title{
+    font-size: 1.5rem;
+}
+.nav ul {
+    list-style: none;
+}
+.nav ul li {
+    display: inline;
+    
+}
+.nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-size:1.2rem;
+    position: relative;
+}
+.nav ul li a :hover{
+    border-bottom: 3px solid white;
+}
+.nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+.nav ul li a:hover::after {
+    width: 100%;
+}
+.nav ul select{
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    font-size: 1rem;
+}
+.nav ul select > option{
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: black;
+}
+.search form .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+.search form .text > .title{
+    font-size:  2rem;
+    font-weight: bold;
+}
+.search form .text > .heading{
+    font-size:  1.5rem;
+    font-weight: bold;
+}
+.search form{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    margin-top: 220px;
+    gap: 10px;
+}
+.search form .form-input{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: row;
+}
+.search input[type="text"]{
+    padding: 15px 30px; 
+    margin-right: 20px; 
+    border-radius: 4px; 
+    background: white;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+}
+.search button{
+    width: 200px;
+    height: 50px;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 1.3em;
+    color:black;
+    transition: .5s; 
+}
+.search button:hover { 
+    background-color:green; 
+    color: white;
+}  
+.main{
+    background-color: var(--bg-color);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+.main > .job-lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.main > .job-lists > .jobs{
+    border-radius: 10px;
+    border :none;
+    background-color: white;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+}
+.main > .job-lists > .jobs > .button{
+   margin-top: 20px;
+}
+.main > .job-lists > .jobs > .button > .apply-btn{
+    text-decoration: none;
+    color: white;
+    background-color: var(--green-color);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}

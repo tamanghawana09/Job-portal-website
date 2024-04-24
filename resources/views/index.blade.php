@@ -1,42 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/register">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job-portal</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  </head>
+  <body>
+    <section class="nav-container">
+        <div class="box">
+            <div class="title"><h2>Jobfind</h2></div>
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Find Jobs</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{route('user-login')}}" class="user-login">Login</a></li>
+                        <select name="login" id="login" onchange="redirectlogin()">
+                            <option>Login</option>
+                            <option value="candidateRegister">Register as User</option>
+                            <option value="candidateRecruiter">Register as Recruiter</option>
+                        </select>
+                        <select name="register" id="register" onchange="redirect()">
+                            <option>Register</option>
+                            <option value="candidateRegister">Register as User</option>
+                            <option value="candidateRecruiter">Register as Recruiter</option>
+                        </select>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="search">
+            <form action="#" method="get">
+                @csrf
+                    <div class="text">
+                        <p class="title ">FIND JOBS,CREATE TRACKABLE RESUMES AND ENRICH YOUR APPLICATIONS.</p><br>
+                        <h3 class="heading">The Easiest Way to Get Your New Job</h3>
+                    </div>
+                    <div class="form-input">
+                        <div class="input-group">
+                            <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                            <input type="text" name="keywords" placeholder="Keywords">                            
+                        </div>
+                        <div class="input-group">
+                            <span class="icon"><ion-icon name="navigate-outline"></ion-icon></span>
+                            <input type="text" name="location" placeholder="Location">
+                        </div>
+                        <div class="input-group">
+                            <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+                            <input type="text" name="company" placeholder="Company">
+                        </div>
+                        <button type="submit">Search</button>
+                    </div>
+            </form>
+        </div>
+    </section>
+    <section class="main">
+            <h1>Get your dream job right now</h1><br><br>
+        <div class="job-lists">
+            @foreach ($posts as $value)
+            <div class="jobs">
+                <h1>{{$value['title']}}</h1>
+                <div class="company-desc">
+                    <h3>Company Description</h3>
+                    <p>{{$value['company_description']}}</p>
+                </div>
+                <div class="button">
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </section>
+    <script src="{{asset('js/redirectScript.js')}}"></script>
+  </body>
 </html>

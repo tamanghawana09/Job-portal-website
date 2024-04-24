@@ -14,4 +14,9 @@ class AuthenticateMiddleware
     }
     return $next($req);
    }
+   protected $except = [
+    'login',
+    'signin',
+    ];
+
 }

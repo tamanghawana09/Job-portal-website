@@ -21,7 +21,7 @@
                 <li><a href="{{route('admin-candidate')}}"><i class="fa-solid fa-bars-progress"></i>Candidate Management</a></li>
                 <li><a href="{{route('admin-ATS')}}"><i class="fa-solid fa-gauge"></i>Applicant Tracking System</a></li>
                 <li><a href="{{route('admin-job-analytics')}}"><i class="fa-solid fa-chart-line"></i>Job Analytics</a></li>
-                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a></li>
+                <li><a href="{{route('admin-logout')}}"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a></li>
             </div>
             
         </ul>

@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\JobPost;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Psr\Http\Message\ResponseInterface;
 
 class AdminController extends Controller
 {
     public function index(){
-        return view('index');
+        $posts =JobPost::all();
+        return view('index', ['posts' => $posts]);
     }
     public function registerForm(){
         return view('register');
@@ -50,10 +52,13 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
 
+        $role_id = 1;
+
         $user = User::create ([
             'email' => $req->email,
             'password' => bcrypt($req->password),
             'username' => $req->username,
+            'role_id' => $role_id,
         ]);
         Auth::login($user);
         return redirect()->route('login');
@@ -70,4 +75,10 @@ class AdminController extends Controller
         }
         return redirect()->back()->with('error','Invalid credentials');
     }
+
+    public function adminlogout(){
+        Auth::logout();
+        return redirect()->route('index');
+    }
+
 }

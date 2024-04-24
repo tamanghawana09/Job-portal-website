@@ -18,22 +18,6 @@ class GoogleAuthController extends Controller
         try{
             $googleUser = Socialite::driver('google')->user();
 
-            // $user = User::where('google_id',$user->getId)->first();
-
-            // if(!$user){
-            //     $new_user = User::create([
-            //         'email' => $user->getEmail(),
-            //         'username'=> $user->getName(),
-            //         'google_id' => $user->getId()
-            //     ]);
-            //     $new_user->save();
-            //     Log::info('New user created with Google ID: ' . $new_user->google_id);
-            //     Auth::login($new_user);
-            // }else{
-            //     Auth::login($user);
-            //     return redirect()->route('user-dashboard');
-            // }
-
             $user = User::updateOrCreate([
                 'google_id' =>$googleUser->id,
             ],[
@@ -44,7 +28,7 @@ class GoogleAuthController extends Controller
             ]);
 
             Auth::login($user);
-            return redirect()->route('admin-dashboard');
+            return redirect()->route('user-dashboard');
         }catch(\Exception $e){
             Log::error('Google authentication error: ' . $e->getMessage());
             return redirect()->route('login')->with('error', 'An error occurred during Google authentication.');
