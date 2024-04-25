@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -15,6 +16,19 @@ class UserController extends Controller
     public function userDashboard(){
         return view('User-UI.dashboarduser');
     }
+    public function userProfile(){
+        return view('User-UI.profileuser');
+    }
+    public function userSearchJob(){
+        $posts =JobPost::all();
+        return view('User-UI.searchjobuser',['posts'=>$posts]);
+    }
+    public function userApplication(){
+        return view('User-UI.applicationuser');
+    }
+    public function userContact(){
+        return view('User-UI.contactuser');
+    }
 
     public function userSignup(Request $req){
         $req->validate([
@@ -23,6 +37,7 @@ class UserController extends Controller
             'password' => 'required',
         ]);
         $role_id =0;
+        
         $user = User::create ([
             'email' => $req->email,
             'password' => bcrypt($req->password),
@@ -35,13 +50,26 @@ class UserController extends Controller
 
     public function userSignin(Request $req){
         $req->validate([
-            'email' =>['required', 'email'],
+            'email' =>'required|email',
             'password' => 'required',
         ]);
+        $credentials = $req->only('email','password');
 
-        if(Auth::attempt(['email' =>$req->email, 'password' => $req->password])){
-            return redirect()->route('user-dashboard');
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            if ($user->role_id === 0) {
+                return redirect()->route('user-dashboard');
+            }
         }
         return redirect()->back()->with('error','Invalid credentials');
+    }
+
+    public function userlogout(){
+        Auth::logout();
+        return redirect()->route('index');
+    }
+
+    public function store(){
+        
     }
 }

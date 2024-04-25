@@ -24,64 +24,40 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{route('user-dashboard')}}" class="sidebar-link">
                         <i class="lni lni-home"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{route('search-job')}}" class="sidebar-link">
                          <i class="lni lni-search"></i>
                         <span>Search Opportunities</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                    <a href="{{route('user-profile')}}" class="sidebar-link">
                         <i class="lni lni-user"></i>
                         <span>Profile</span>
                     </a>
-
-                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Login</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Register</a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                       data-bs-target="#applications" aria-expanded="false" aria-controls="applications">
+                    <a href="{{route('user-application')}}" class="sidebar-link">
                         <i class="lni lni-layout"></i>
                         <span>Application</span>
                     </a>
-                    <ul id="applications" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Job Applications</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Event Applications</a>
-                        </li>
-                    </ul>
                 </li>
+
                 
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{route('user-contact')}}" class="sidebar-link">
                         <i class="lni lni-phone"></i>
                         <span>Contact Us</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-cog"></i>
-                        <span>Setting</span>
-                    </a>
-                </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
+                <a href="{{route('user-logout')}}" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>
@@ -89,26 +65,9 @@
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3">
-                <form action="#" class="d-none d-sm-inline-block">
-
-                </form>
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <div class="user-icon-container">
-                                    <i class="lni lni-user dark-circle"></i>
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="#"><i class="lni lni-home"></i> Dashboard</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="lni lni-user"></i> Profile</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="lni lni-exit"></i> Logout</a></li>
-                            </ul>
-                            
-                        </li>
-                    </ul>
-                </div>
+            <div class="title">
+                    <h1>Dashboard</h1>
+            </div>
             </nav>
             <div class="btn-group">
             <button class="btn"><i class="lni lni-checkmark-circle icon-red"></i> Applied</button>

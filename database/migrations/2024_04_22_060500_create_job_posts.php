@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('job_posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('admin_id');
+            $table->foreign('admin_id')->references('id')->on('users');
             $table->string('title');
             $table->text('company_description')->nullable();
             $table->text('role')->nullable();
             $table->text('qualification')->nullable();
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }

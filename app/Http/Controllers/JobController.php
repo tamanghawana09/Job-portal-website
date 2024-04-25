@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
@@ -28,13 +29,17 @@ class JobController extends Controller
                 'company_description' => 'required|string',
                 'role' => 'required|string',
                 'qualification' => 'required|string',
+                'location' => 'required|string',
             ]);
 
+            $adminId = Auth::id();
             $job = new JobPost();
             $job->title = $validatedData['title'];
             $job->company_description = $validatedData['company_description'];
             $job->role = $validatedData['role'];
             $job->qualification = $validatedData['qualification'];
+            $job->location = $validatedData['location'];
+            $job->admin_id = $adminId;
             $job->save();
 
             return redirect(route('admin-job-analytics'));

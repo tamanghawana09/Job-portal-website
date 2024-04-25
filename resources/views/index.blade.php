@@ -14,14 +14,13 @@
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Find Jobs</a></li>
+                        <li><a href="#main">Find Jobs</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="{{route('user-login')}}" class="user-login">Login</a></li>
                         <select name="login" id="login" onchange="redirectlogin()">
                             <option>Login</option>
-                            <option value="candidateRegister">Register as User</option>
-                            <option value="candidateRecruiter">Register as Recruiter</option>
+                            <option value="candidateLogin">Login as User</option>
+                            <option value="recruiterLogin">Login as Recruiter</option>
                         </select>
                         <select name="register" id="register" onchange="redirect()">
                             <option>Register</option>
@@ -57,7 +56,7 @@
             </form>
         </div>
     </section>
-    <section class="main">
+    <section class="main" id="main">
             <h1>Get your dream job right now</h1><br><br>
         <div class="job-lists">
             @foreach ($posts as $value)

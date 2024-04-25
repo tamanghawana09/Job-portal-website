@@ -23,6 +23,10 @@
                     <h3>Qualification:</h3>
                     <p>{{$post->qualification}}</p>
                 </div>
+                <div class="location-desc">
+                    <h3>Location:</h3>
+                    <p>{{$post->location}}</p>
+                </div>
                 <div class="button">
                     <a href="{{route('admin-job-analytics')}}">Go Back</a>
                 </div>

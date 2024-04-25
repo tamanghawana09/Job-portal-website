@@ -8,7 +8,7 @@ body {
 }
 
 .nav-container {
-    background-image: url(https://img.freepik.com/premium-photo/top-view-office-desk-with-office-tools-computer-laptop-wood-table-background-with-copy-space-generative-ai_3535-3556.jpg);
+    background-image: url(/images/background.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,7 @@ body {
 .box{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 10px;
 }
 .box .title{
@@ -33,7 +33,7 @@ body {
 .nav ul li a {
     text-decoration: none;
     padding: 10px;
-    color: white;
+    color: black;
     font-size:1.2rem;
     position: relative;
 }
@@ -56,15 +56,15 @@ body {
 .nav ul select{
     padding: 10px;
     background-color: transparent;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 10px;
-    color: black;
+    color: white;
     font-size: 1rem;
 }
 .nav ul select > option{
     font-size: 1rem;
-    background-color: var(--bg-color);
-    color: black;
+    background-color: gray;
+    color: white;
 }
 .search form .text{
     display: flex;

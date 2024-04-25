@@ -1,8 +1,8 @@
-document.getElementById('togglebutton').addEventListener('click', function() {
-    document.getElementById('nav-container').classList.toggle('active');
-    document.getElementById('main-content').classList.toggle('active');
-});
+const hamBurger = document.querySelector(".toggle-btn");
 
+hamBurger.addEventListener("click", function () {
+  document.querySelector("#sidebar").classList.toggle("expand");
+});
 
 var form1 = document.getElementById('personal-info-form');
 var form2 = document.getElementById('education-info-form');

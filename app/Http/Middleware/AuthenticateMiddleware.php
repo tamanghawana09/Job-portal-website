@@ -12,11 +12,10 @@ class AuthenticateMiddleware
     if(!Auth::check()){
         return redirect()->route('login');
     }
-    return $next($req);
-   }
-   protected $except = [
-    'login',
-    'signin',
-    ];
 
+    if(Auth::user()->role_id == 1){
+        return $next($req);
+    }
+    return redirect()-> route('user-dashboard');
+   }
 }

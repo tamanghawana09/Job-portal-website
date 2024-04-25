@@ -228,5 +228,21 @@ a.sidebar-link:hover {
     margin-right: 5px; 
 }
 
+.apply-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border-color: #28a745; /* Green */
+    width: auto;
+    height: auto;
+}
+
+.read-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+    border-color: #007bff; /* Blue */
+    width: auto;
+    height: auto;
+}
+
 
 @media (min-width: 768px) {}

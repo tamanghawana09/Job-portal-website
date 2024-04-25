@@ -7,10 +7,12 @@ use App\Models\JobPost;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Psr\Http\Message\ResponseInterface;
 
 class AdminController extends Controller
 {
+    
     public function index(){
         $posts =JobPost::all();
         return view('index', ['posts' => $posts]);
@@ -53,7 +55,6 @@ class AdminController extends Controller
         ]);
 
         $role_id = 1;
-
         $user = User::create ([
             'email' => $req->email,
             'password' => bcrypt($req->password),
@@ -66,11 +67,12 @@ class AdminController extends Controller
 
     public function signin(Request $req){
         $req->validate([
-            'email' =>['required', 'email'],
+            'email' =>'required|email',
             'password' => 'required',
         ]);
 
-        if(Auth::attempt(['email' =>$req->email, 'password' => $req->password])){
+        if (Auth::guard('admin')->attempt(['email' => $req->email, 'password' => $req->password])) {
+            // Login successful, redirect to admin dashboard
             return redirect()->route('admin-dashboard');
         }
         return redirect()->back()->with('error','Invalid credentials');

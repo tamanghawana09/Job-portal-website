@@ -19,6 +19,10 @@
                 <label for="about" class="form-label">Company description</label>
                 <textarea name="company_description" id="description" cols="30" rows="10"></textarea>
             </div>
+            <div class="location">
+                <label for="about" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location">
+            </div>
             <div class="role">
                 <label class="form-label" for="role-description">Role/Description:</label>
                 <textarea name="role" id="role" cols="30" rows="10"></textarea>

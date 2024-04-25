@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Job-Portal</title>
     <style>
         /* CSS for the login page */
         body {
@@ -85,6 +85,21 @@
         .active .register-form {
             display: block;
         }
+        .google-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: goldenrod; /* Google's red color */
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Add margin to separate from other elements */
+        }
+
+        .google-btn:hover {
+            background-color: #c23321; /* Darken the background color on hover */
+        }
     </style>
 </head>
 <body>
@@ -146,7 +161,7 @@
             </div>
             <form action="{{route('google-auth')}}" method="post">
                 @csrf
-                <button>Signin with google</button>
+                <button class="google-btn">Signin with google</button>
             </form>
             <p>Already have an account? <a href="#" class="login-link">Login</a></p>
         </div>

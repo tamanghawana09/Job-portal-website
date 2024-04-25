@@ -21,7 +21,7 @@
                 <li><a href="{{route('admin-candidate')}}"><i class="fa-solid fa-bars-progress"></i>Candidate Management</a></li>
                 <li><a href="{{route('admin-ATS')}}"><i class="fa-solid fa-gauge"></i>Applicant Tracking System</a></li>
                 <li><a href="{{route('admin-job-analytics')}}"><i class="fa-solid fa-chart-line"></i>Job Analytics</a></li>
-                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a></li>
+                <li><a href="{{route('admin-logout')}}"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a></li>
             </div>
             
         </ul>
@@ -32,7 +32,8 @@
                     <button id="togglebutton"><i class="fa-solid fa-bars"></i></button>
                 </div>
                 <div class="title"><h1>Job-Analytics</h1></div>
-                <div class="admin"><i class="fa-solid fa-user">user</i></div>
+
+                <div class="admin"><i class="fa-solid fa-user"></i></div>
             </nav>
             <div class="dashboard-content">
                 <div class="grid">
@@ -71,6 +72,12 @@
                         <h3>Role:</h3>
                         <p>{{$value['role']}}</p>
                     </div>
+                    <div class="posted-by">
+                        @php
+                        $admin = \App\Models\User::find($value['admin_id']);
+                        @endphp
+                        <h3>Posted by: {{$admin->username}}</h3>
+                    </div>
                     <div class="button">
                         <a href="/job-analytics/read/{{$value['id']}}" class="read-btn">Read</a></button>
                         <a href="/job-analytics/edit/{{$value['id']}}" class="edit-btn">Edit</a></button>
@@ -80,6 +87,6 @@
                 @endforeach
             </div>
    </section>
-   <script src="js/script.js"></script>
+   <script src="js/dashboard.js"></script>
 </body>
 </html>
