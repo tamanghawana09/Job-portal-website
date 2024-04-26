@@ -56,7 +56,6 @@ Route::get('/userSearchJob/apply/{id}',[JobApplicationController::class, 'apply'
 Route::get('/dashboard',[AdminController::class, 'adminDashboard'])->name('admin-dashboard')->middleware('auth:admin');
 Route::get('/profile',[AdminController::class, 'adminProfile'])->name('admin-profile')->middleware('auth:admin');
 Route::get('/candidate',[AdminController::class, 'adminCandidate'])->name('admin-candidate')->middleware('auth:admin');
-Route::get('/ATS',[AdminController::class, 'adminATS'])->name('admin-ATS')->middleware('auth:admin');
 Route::get('/job-analytics',[AdminController::class, 'adminJobAnalytics'])->name('admin-job-analytics')->middleware('auth:admin');
 
 //Job Analytics -> create-job posts

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job-Portal</title>
+    <title>Jobfind</title>
     <style>
         /* CSS for the login page */
         body {
@@ -105,7 +105,7 @@
 <body>
     <div class="wrapper">
         <div class="login-form">
-            <h2>Login</h2>
+            <h2>User Login</h2>
             <div class="form-box">
                 <form action="{{route('user-signin')}}" method="post">
                     @csrf
@@ -131,7 +131,7 @@
         </div>
 
         <div class="register-form">
-            <h2>Register</h2>
+            <h2>User Register</h2>
             <div class="form-box">
                 <form action="{{route('user-signup')}}" method="post">
                     @csrf

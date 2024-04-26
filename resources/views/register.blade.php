@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Registration</h1>
+        <h1> Admin Registration</h1>
         <form action="{{route('sign-up')}}" method="post">
             @csrf
             <div class="input-group">
