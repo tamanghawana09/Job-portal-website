@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Details extends Model
+class email extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['image_path','firstname','lastname','gender','dob'];
+    protected $fillable = ['email','number'];
 }

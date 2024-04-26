@@ -13,16 +13,11 @@ use Laravel\Socialite\Facades\Socialite;
 //main page
 Route::get('/', [AdminController::class, 'index'])->name('index');
 
-//register page for recruiter
+//register & login page for recruiter
 Route::get('/register',[AdminController::class, 'registerForm']);
-
 Route::post('/signup',[AdminController::class, 'signup'])->name('sign-up');
-
 Route::post('/signin',[AdminController::class, 'signin'])->name('sign-in');
-
-//login page for recruiter
 Route::get('/login',[AdminController::class, 'loginForm'])->name('login');
-
 //logout page for recruiter
 Route::get('/adminlogout',[AdminController::class, 'adminlogout'])->name('admin-logout');
 
@@ -35,7 +30,6 @@ Route::post('/userSignup',[UserController::class, 'userSignup'])->name('user-sig
 
  //redirect the user to the OAuth provider
 Route::post('auth/google',[GoogleAuthController::class, 'redirect'])->name('google-auth');
-
 Route::get('/auth/google/call-back',[GoogleAuthController::class, 'callbackGoogle']);
 
 //main-features route for user
@@ -46,7 +40,13 @@ Route::get('/userApplication',[UserController::class, 'userApplication'])->name(
 Route::get('/userContact',[UserController::class, 'userContact'])->name('user-contact')->middleware('auth');
 Route::get('/userLogout',[UserController::class, 'userlogout'])->name('user-logout');
 Route::post('/contact',[ContactController::class, 'submitForm'])->name('contact.submit')->middleware('auth');
-Route::post('/store',[UserController::class, 'store'])->name('store.data')->middleware('auth');
+Route::post('/detailStore',[UserController::class, 'detailStore'])->name('store.data')->middleware('auth');
+Route::post('/educationStore',[UserController::class, 'educationStore'])->name('store.education')->middleware('auth');
+Route::post('/skillStore',[UserController::class, 'skillStore'])->name('store.skill')->middleware('auth');
+Route::post('/trainingStore',[UserController::class, 'trainingStore'])->name('store.training')->middleware('auth');
+Route::post('/emailStore',[UserController::class, 'emailStore'])->name('store.email')->middleware('auth');
+Route::get('/userSearchJob/read/{id}',[UserController::class, 'readPost']);
+
 
 
 
@@ -69,6 +69,4 @@ Route::post('/submit',[JobController::class, 'submitJob'])->name('submit-job');
 Route::get('/job-analytics/read/{id}',[JobController::class, 'readJob']);
 Route::get('/job-analytics/edit/{id}',[JobController::class, 'editJob']);
 Route::get('/job-analytics/delete/{id}',[JobController::class, 'deleteJob']);
-
-
 Route::post('/job-analytics/update/{id}', [JobController::class, 'updateJob']);

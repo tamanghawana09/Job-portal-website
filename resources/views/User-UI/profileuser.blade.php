@@ -83,25 +83,24 @@
             </div>
             <div class="form-content">
                 <div class="personal-info">
-                    <form action="{{route('store.data')}}" method="post" id="personal-info-form">
+                    <form action="{{route('store.data')}}" method="post" id="personal-info-form" enctype="multipart/form-data">
                         @csrf
                         <div class="profile-desc">
                             <h1>Profile</h1>
                             <div class="image">
                                 <input type="file" name="image">
-                                <button type="submit">Upload Image</button>
                             </div>
                         </div>
                         <div class="first-name">
                             <label for="fname">First Name</label>
-                            <input type="text" id="fname" name="fname" placeholder="First Name">
+                            <input type="text" id="firstname" name="firstname" placeholder="First Name">
                             @error('fname')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
                         <div class="last-name">
                             <label for="lname">Last Name</label>
-                            <input type="text" id="lname" name="lname" placeholder="Last Name">
+                            <input type="text" id="lastname" name="lastname" placeholder="Last Name">
                             @error('lname')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
@@ -126,12 +125,16 @@
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
+                            <div class="resume">
+                                <label for="resume">Resume:</label>
+                                <input type="file" name="resume">
+                            </div>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
                 
                 <div class="education-info">
-                    <form action="" method="post" id="education-info-form">
+                    <form action="{{route('store.education')}}" method="POST" id="education-info-form">
                         @csrf
                         <h1>Education</h1>
                         <div class="institution-desc">
@@ -178,7 +181,7 @@
                 </div>
 
                 <div class="skill-info">
-                    <form id="skill-info-form">
+                    <form  action="{{route('store.skill')}}" method="POST" id="skill-info-form">
                         @csrf
                         <h1>Skills</h1>
                         <div class="skill-desc">
@@ -193,7 +196,7 @@
                 </div>
 
                 <div class="training-info">
-                    <form action="" method="post" id="training-info-form">
+                    <form action="{{route('store.training')}}" method="post" id="training-info-form">
                         @csrf
                         <h1>Training / Certificate</h1>
                         <div class="training-desc">
@@ -219,7 +222,7 @@
                 </div>
 
                 <div class="email-info">
-                    <form action="" method="post" id="email-info-form">
+                    <form action="{{route('store.email')}}" method="post" id="email-info-form">
                         @csrf
                         <h1>Email & Phone number</h1>
                         <div class="email-desc">
