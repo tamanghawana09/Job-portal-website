@@ -75,6 +75,27 @@
             <button class="btn"><i class="lni lni-close icon-green"></i> Rejected</button>
             <button class="btn"><i class="lni lni-bookmark icon-purple"></i> Bookmarks</button>
             </div>
+            <div class="container">
+                <h2 class="mt-4 mb-3">My Applied Jobs</h2>
+
+                @if ($jobApplications->count() > 0)
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            @foreach ($jobApplications as $application)
+                            <li class="list-group-item">
+                                <h5 class="card-title">{{ $application->jobPost->title }}</h5>
+                                <p class="card-text">{{ $application->jobPost->company_description }}</p>
+                                <p class="card-text"><small class="text-muted">Applied Date: {{ $application->created_at->format('M d, Y') }}</small></p>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                @else
+                <p class="mt-3">No applied jobs found.</p>
+                @endif
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

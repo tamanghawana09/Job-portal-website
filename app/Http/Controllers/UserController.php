@@ -20,7 +20,11 @@ class UserController extends Controller
     }
 
     public function userDashboard(){
-        return view('User-UI.dashboarduser');
+        $user = auth()->user();
+
+        $jobApplications = $user->jobApplications()->with('jobPost')->get();
+
+        return view('User-UI.dashboarduser', compact('jobApplications'));
     }
     public function userProfile(){
         return view('User-UI.profileuser');
