@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Adminprofile;
 use App\Models\JobPost;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -81,6 +82,45 @@ class AdminController extends Controller
     public function adminlogout(){
         Auth::logout();
         return redirect()->route('index');
+    }
+
+    public function profileStore(Request $request){
+        try{
+            $validatedData = $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'phone' => 'required',
+                'summary' => 'required|string',
+                'education' => 'required|string',
+                'experience' => 'required|string',
+                'skills' => 'required|string',
+                'responsibilities' => 'required|string',
+                'achievements' => 'required|string',
+                'affiliations' => 'required|string',
+                'attributes' => 'required|string',
+                'languages' => 'required|string',
+            ]);
+
+            $profile = new Adminprofile();
+            $profile->name = $validatedData['name'];
+            $profile->email = $validatedData['email'];
+            $profile->phone = $validatedData['phone'];
+            $profile->summary = $validatedData['summary'];
+            $profile->education = $validatedData['education'];
+            $profile->experience = $validatedData['experience'];
+            $profile->skills = $validatedData['skills'];
+            $profile->responsibilties = $validatedData['responsibilities'];
+            $profile->achievements = $validatedData['achievements'];
+            $profile->affiliations = $validatedData['affiliations'];
+            $profile->attributes = $validatedData['attributes'];
+            $profile->languages = $validatedData['languages'];
+            $profile->save();
+
+            
+            return redirect(route('admin-dashboard'));
+        }catch(\Exception $e){
+            return "Error: " . $e->getMessage();
+        }
     }
 
 }

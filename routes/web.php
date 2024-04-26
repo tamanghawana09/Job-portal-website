@@ -57,6 +57,7 @@ Route::get('/dashboard',[AdminController::class, 'adminDashboard'])->name('admin
 Route::get('/profile',[AdminController::class, 'adminProfile'])->name('admin-profile')->middleware('auth:admin');
 Route::get('/candidate',[AdminController::class, 'adminCandidate'])->name('admin-candidate')->middleware('auth:admin');
 Route::get('/job-analytics',[AdminController::class, 'adminJobAnalytics'])->name('admin-job-analytics')->middleware('auth:admin');
+Route::post('/storeProfile',[AdminController::class, 'profileStore'])->name('store-profile')->middleware('auth:admin');
 
 //Job Analytics -> create-job posts
 Route::get('/job-analytics/create-job',[JobController::class, 'createJob'])->name('create-job')->middleware('auth:admin');
@@ -66,8 +67,8 @@ Route::get('/job-analytics/pending-application',[JobController::class, 'pendingA
 
 
 //create-job
-Route::post('/submit',[JobController::class, 'submitJob'])->name('submit-job');
-Route::get('/job-analytics/read/{id}',[JobController::class, 'readJob']);
-Route::get('/job-analytics/edit/{id}',[JobController::class, 'editJob']);
-Route::get('/job-analytics/delete/{id}',[JobController::class, 'deleteJob']);
-Route::post('/job-analytics/update/{id}', [JobController::class, 'updateJob']);
+Route::post('/submit',[JobController::class, 'submitJob'])->name('submit-job')->middleware('auth:admin');
+Route::get('/job-analytics/read/{id}',[JobController::class, 'readJob'])->middleware('auth:admin');
+Route::get('/job-analytics/edit/{id}',[JobController::class, 'editJob'])->middleware('auth:admin');
+Route::get('/job-analytics/delete/{id}',[JobController::class, 'deleteJob'])->middleware('auth:admin');
+Route::post('/job-analytics/update/{id}', [JobController::class, 'updateJob'])->middleware('auth:admin');

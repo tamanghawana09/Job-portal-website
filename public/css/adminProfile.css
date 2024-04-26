@@ -4,6 +4,7 @@
 
 body{
    background-color: var(--bg-color);
+   font-family: 'Inter';
 }
 .nav-container{
    width: 300px;
@@ -101,47 +102,48 @@ body{
    font-size: 20px;
 }
 
-.main-content > .profile-content > nav > ul{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: row;
-   padding: 10px;
-   gap: 20px;
-   font-family: 'Inter';
-   background-color: white;
+
+.profile-form {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #f9f9f9;
 }
 
-.main-content > .profile-content > nav > ul > li{
-   text-decoration:none;
-   list-style: none;
-   gap: 10px;
+.profile-form h2 {
+   text-align: center;
 }
 
-.main-content > .profile-content > nav > ul > li > button{
-   display: flex;
-   align-items: center;
+.profile-form label {
+   display: block;
+   margin-bottom: 5px;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="tel"],
+.profile-form textarea {
+   width: 100%;
+   padding: 8px;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   box-sizing: border-box;
+}
+
+.profile-form button {
+   width: 100%;
    padding: 10px;
+   background-color: #4CAF50;
+   color: white;
    border: none;
-   font-size: 1rem;
-   background-color: transparent;
-   transition: box-shadow 0.3s ease-in-out;
+   border-radius: 3px;
+   cursor: pointer;
+   font-size: 16px;
 }
 
-.main-content > .profile-content > nav > ul > li :hover{
-   box-shadow: 9px 9px 37px -10px rgba(0,0,0,0.81);
-   -webkit-box-shadow: 9px 9px 37px -10px rgba(0,0,0,0.81);
-   -moz-box-shadow: 9px 9px 37px -10px rgba(0,0,0,0.81);
-
-}
-
-.main-content > .profile-content > nav > ul > li > button i{
-  margin-right: 10px;
-}
-
-.main-content > .form-content > .personal-info > form{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+.profile-form button:hover {
+   background-color: #45a049;
 }
