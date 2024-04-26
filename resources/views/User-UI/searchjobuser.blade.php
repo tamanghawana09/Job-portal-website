@@ -92,7 +92,7 @@
                         <p class="card-text">{{$admin->username}}</p>
                     </div>
                     <div class="button">
-                        <a href="" class="btn btn-success btn-sm apply-btn">Apply</a>
+                        <a href="/userSearchJob/apply/{{$value['id']}}" class="btn btn-success btn-sm apply-btn">Apply</a>
                         <a href="/userSearchJob/read/{{$value['id']}}" class="btn btn-secondary btn-sm read-btn">Read</a>
                     </div>
                 </div>

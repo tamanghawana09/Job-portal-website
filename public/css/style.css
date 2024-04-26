@@ -147,7 +147,7 @@ body {
 .main > .job-lists > .jobs > .button > .apply-btn{
     text-decoration: none;
     color: white;
-    background-color: var(--green-color);
+    background-color: var(--secondary-color);
     padding: 10px;
     border: none;
     border-radius: 10px;

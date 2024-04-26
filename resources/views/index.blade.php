@@ -67,7 +67,7 @@
                     <p>{{$value['company_description']}}</p>
                 </div>
                 <div class="button">
-                    <a href="#" class="apply-btn">Apply Now</a>
+                    <a href="/userSearchJob/read/{{$value['id']}}" class="apply-btn">Read</a>
                 </div>
             </div>
             @endforeach

@@ -6,6 +6,7 @@ use App\Models\Details;
 use App\Models\education;
 use App\Models\email;
 use App\Models\JobPost;
+use App\Models\JobApplication;
 use App\Models\skill;
 use App\Models\training;
 use Illuminate\Http\Request;
@@ -34,7 +35,11 @@ class UserController extends Controller
     }
 
     public function userApplication(){
-        return view('User-UI.applicationuser');
+        $user = auth()->user();
+
+        $jobApplications = $user->jobApplications()->with('jobPost')->get();
+
+        return view('User-UI.applicationuser', compact('jobApplications'));
     }
     public function userContact(){
         return view('User-UI.contactuser');

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JobApplicationController;
 use App\Models\JobPost;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -46,6 +47,7 @@ Route::post('/skillStore',[UserController::class, 'skillStore'])->name('store.sk
 Route::post('/trainingStore',[UserController::class, 'trainingStore'])->name('store.training')->middleware('auth');
 Route::post('/emailStore',[UserController::class, 'emailStore'])->name('store.email')->middleware('auth');
 Route::get('/userSearchJob/read/{id}',[UserController::class, 'readPost']);
+Route::get('/userSearchJob/apply/{id}',[JobApplicationController::class, 'apply'])->name('apply');
 
 
 
