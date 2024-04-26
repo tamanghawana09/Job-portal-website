@@ -52,6 +52,7 @@ Route::get('/userSearchJob/apply/{id}',[JobApplicationController::class, 'apply'
 
 
 
+
 //main-features route for admin
 Route::get('/dashboard',[AdminController::class, 'adminDashboard'])->name('admin-dashboard')->middleware('auth:admin');
 Route::get('/profile',[AdminController::class, 'adminProfile'])->name('admin-profile')->middleware('auth:admin');

@@ -38,6 +38,7 @@ class UserController extends Controller
         return view('User-UI.readpost',['post'=>$post]);
     }
 
+
     public function userApplication(){
         $user = auth()->user();
 

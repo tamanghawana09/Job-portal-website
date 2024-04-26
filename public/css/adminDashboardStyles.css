@@ -101,23 +101,6 @@ body{
 }
 
 
-.main-content > nav > .search > form > input{
-   padding: 7px;
-   width: 300px;
-   border-radius: 10px;
-   border:none;
-   background-color: #d2d1d1b1;
-}
-
-.main-content > nav > .search > form > button{
-   padding:7px;
-   width: 80px;
-   border-radius:10px;
-   border:none;
-   background-color: var(--primary-color);
-   color: white;
-}
-
 .main-content > .dashboard-content{
    padding: 10px;
 }
@@ -168,41 +151,30 @@ body{
    font-weight: 300;
 }
 
-.main-content > .chart-content{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding: 10px;
-   font-family: 'Inter';
-}
-.main-content > .chart-content > .grid{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 20px;
-   padding: 10px;
-}
-.main-content > .chart-content > .grid > .bar-chart{
-   width: auto;
-   height: 35vh;
-   background-color: white;
-   padding: 20px;
-   border-radius: 10px;
-}
-.main-content > .chart-content > .grid > .pie-chart{
-   width: auto;
-   height: 35vh;
-   background-color: white;
-   padding: 20px;
-   border-radius: 10px;
+/* Table styles */
+.job-applications {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-family: 'Poppins', sans-serif;
 }
 
-.main-content > .chart-content > .grid > .bar-chart> .lang{
-   font-size: 1.5rem;
-   font-weight: bold;
+.job-applications th, .job-applications td {
+   border: 1px solid #ddd;
+   padding: 12px;
+   text-align: left;
 }
 
-.main-content > .chart-content > .grid > .pie-chart> .lang{
-   font-size: 1.5rem;
-   font-weight: bold;
+.job-applications th {
+   background-color: #09478a;
+   color: #fff;
+}
+
+.job-applications tbody tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
+
+.job-applications tbody tr:hover {
+   background-color: #f2f2f2;
 }

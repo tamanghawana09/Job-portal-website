@@ -55,27 +55,27 @@
             </div>
         </div>
 
-        <div class="chart-content">
-            <div class="grid">
-                <div class="bar-chart">
-                    <div class="lang">Comparision of Metrics</div>
-                    <div class="desc">Bar graph showing the number of job applications received from different sources (job industry)</div>    
-                </div>
-                <div class="pie-chart">
-                    <div class="lang">Application Status Distribution</div>
-                    <div class="desc">A pie chart to show the distribution of job applications by their status. This could include categories such as "Under Review", "Rejected", "Interview Scheduled" and "Hired".This visualization can give companies a quick overview of the current status of their hiring pipeline.
-                    </div>
-                </div>
-                <div class="bar-chart">
-                    <div class="lang">Trends over time</div>
-                    <div class="desc">Display trends over time using bar graphs. For instance, you could create a bar graph showing the number of job applications received each month over the past year.</div>
-                </div>
-                <div class="pie-chart">
-                    <div class="lang">Skill Set Distribution</div>
-                    <div class="desc">Stats with the people with different types of skill set.</div>
-                </div>
-            </div>
-        </div>
+        <table class="job-applications">
+            <thead>
+                <tr>
+                    <th>Applicant Id</th>
+                    <th>Applicant Name</th>
+                    <th>Job Title</th>
+                    <th>Applied Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($applications as $application)
+                <tr>
+                    <td>{{ $application->user->id }}</td>
+                    <td>{{ $application->user->username }}</td>
+                    <td>{{ $application->job->title }}</td>
+                    <td>{{ $application->applied_date }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
    </section>
    <script src="js/dashboard.js"></script>
 </body>

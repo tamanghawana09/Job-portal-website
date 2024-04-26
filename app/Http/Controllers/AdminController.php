@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Adminprofile;
+use App\Models\JobApplication;
 use App\Models\JobPost;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -31,13 +32,16 @@ class AdminController extends Controller
     }
 
     public function adminDashboard(){
-        return view('Admin-UI.adminDashboard');
+        $applications = JobApplication::with('user','job')->get();
+        return view('Admin-UI.adminDashboard',compact('applications'));
     }
     public function adminProfile(){
         return view('Admin-UI.adminProfile');
     }
     public function adminCandidate(){
-        return view('Admin-UI.adminCandidate');
+       $applications = JobApplication::with('user','job')->get();
+
+        return view('Admin-UI.adminCandidate',compact('applications'));
     }
     public function adminATS(){
         return view('Admin-UI.adminATS');

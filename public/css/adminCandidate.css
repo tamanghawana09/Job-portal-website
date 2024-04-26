@@ -4,6 +4,7 @@
 
 body{
    background-color: var(--bg-color);
+   font-family: 'Inter';
 }
 .nav-container{
    width: 300px;
@@ -91,7 +92,6 @@ body{
    
 }
 #togglebutton{
-
    padding: 10px;
    top:20px;
    left: 20px;
@@ -102,19 +102,31 @@ body{
 }
 
 
-.main-content > nav > .search > form > input{
-   padding: 7px;
-   width: 300px;
-   border-radius: 10px;
-   border:none;
-   background-color: #d2d1d1b1;
+
+/* Table styles */
+.job-applications {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-family: 'Poppins', sans-serif;
 }
 
-.main-content > nav > .search > form > button{
-   padding:7px;
-   width: 80px;
-   border-radius:10px;
-   border:none;
-   background-color: var(--primary-color);
-   color: white;
+.job-applications th, .job-applications td {
+   border: 1px solid #ddd;
+   padding: 12px;
+   text-align: left;
+}
+
+.job-applications th {
+   background-color: #09478a;
+   color: #fff;
+}
+
+.job-applications tbody tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
+
+.job-applications tbody tr:hover {
+   background-color: #f2f2f2;
 }
